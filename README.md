@@ -1,12 +1,11 @@
-check it out at [maxbittker.github.io/orbs](http://maxbittker.github.io/orbs)
-#to develop:
-```
-webpack-dev-server --content-base build/ --hot
-```
+# Repetition
 
-#to build bundle:
-```
-webpack -p
-```
-and navigate to
-[http://localhost:8080/webpack-dev-server/build/bundle](http://localhost:8080/webpack-dev-server/build/bundle)
+WebGL (three.js) experiment.
+
+    npm run dev
+    npm run build
+
+dev server: 
+
+http://localhost:8080/webpack-dev-server/build/bundle
+
