@@ -20,7 +20,8 @@
   "homepage": "https://github.com/inconvergent/repetition",
   "dependencies": {
     "husl": "^6.0.1",
-    "three": "^0.76.1"
+    "three": "^0.76.1",
+    "three-orbit-controls": "^72.0.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
