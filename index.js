@@ -1,7 +1,7 @@
 
 const THREE = require('three');
 const HUSL = require('husl');
-var OrbitControls = require('three-orbit-controls')(THREE)
+const OrbitControls = require('three-orbit-controls')(THREE);
 
 let scene;
 let camera;
@@ -23,29 +23,40 @@ let lastRender = new Date();
 //}
 
 const grid = () => {
-  const num = 50;
+  const num = 120;
   const width = 30;
-  const rad = 0.1;
-  const polyCount = 3;
+  const rad = 0.07;
 
-  const color = HUSL.toHex(180, 65, 60);
-  const material = new THREE.MeshBasicMaterial({
-    color,
-    transparent: true,
-    opacity: 0.8
+  const accent = '#00FFFF';
+  const black = '#000000';
+
+  const materialAccent = new THREE.MeshBasicMaterial({
+    color: accent
   });
-  const geom = new THREE.SphereGeometry(rad, polyCount, polyCount);
-  const sphere = new THREE.Mesh(geom, material);
+  const materialBlack = new THREE.MeshBasicMaterial({
+    color: black
+  });
+
+  const geom = new THREE.SphereGeometry(rad, 1, 2);
+  const sphereBlack = new THREE.Mesh(geom, materialBlack);
+  const sphereAccent = new THREE.Mesh(geom, materialAccent);
 
   for (let j = 0; j < num; j++){
     for (let i = 0; i < num; i++){
-      const s = sphere.clone();
+      let s;
+      if (Math.random() < 0.5) {
+        s = sphereBlack.clone();
+      } else {
+        s = sphereAccent.clone();
+      }
+
+      //console.log(s);
+
       s.position.set(
         -0.5 * width + (i / num * width),
         -0.5 * width + (j / num * width),
          0
       );
-      //console.log(s);
       scene.add(s);
     }
   }
@@ -81,3 +92,4 @@ const animate = () => {
 
 init();
 animate();
+
