@@ -5,7 +5,7 @@ WebGL (three.js) experiment.
     npm run dev
     npm run build
 
-dev server: 
+dev server:
 
-http://localhost:8080/webpack-dev-server/build/bundle
+    http://localhost:8080/webpack-dev-server/build/bundle
 
