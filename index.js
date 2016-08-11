@@ -45,8 +45,8 @@ const makeGrids = (num, width, numGrids) => {
 
 const init = () => {
   const num = 100;
-  const width = 200;
-  const numGrids = 10;
+  const width = 600;
+  const numGrids = 7;
 
   scene = new THREE.Scene();
 
